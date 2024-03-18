@@ -1,20 +1,28 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { StyledNavbar } from './Navbar.styles';
 
 const Navbar = () => {
   return (
-    <nav>
+    <StyledNavbar>
+      <h1>ShopIt</h1>
       <ul>
         <li>
-          <Link to='home'>Home</Link>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : 'n')} to='home'>
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to='shop'>Shop</Link>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='shop'>
+            Shop
+          </NavLink>
         </li>
         <li>
-          <Link to='cart'>Cart</Link>
+          <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='cart'>
+            Cart
+          </NavLink>
         </li>
       </ul>
-    </nav>
+    </StyledNavbar>
   );
 };
 
