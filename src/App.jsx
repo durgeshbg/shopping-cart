@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import Button from './components/Button';
+import { Outlet } from 'react-router-dom';
 
 function App() {
-  const [counter, setCounter] = useState(0);
   return (
     <>
-      <Button counter={counter} setCounter={setCounter} bg='red' color='green' />
-      <div aria-label='display'>{counter}</div>
+      <h1>Hello</h1>
+      <Outlet />
     </>
   );
 }
