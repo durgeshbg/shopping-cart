@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { StyledCard } from './Card.styles';
 
 const Card = ({ title, description, category, image, price, rating }) => {
   return (
     <>
-      <div>
+      <StyledCard>
         <div className='title'>{title}</div>
         <div className='description'>{description}</div>
         <div className='category'>Categories: {category}</div>
@@ -14,7 +15,7 @@ const Card = ({ title, description, category, image, price, rating }) => {
         <div>
           <img src={image} alt={title} />
         </div>
-      </div>
+      </StyledCard>
     </>
   );
 };
