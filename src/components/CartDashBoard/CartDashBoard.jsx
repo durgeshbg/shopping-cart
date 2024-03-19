@@ -18,7 +18,7 @@ const CartDashBoard = () => {
 
   return (
     <StyledCartDashBoard>
-      <div className='error'>{error}</div>
+      {error && <div className='error'>{error}</div>}
       <div className='cart'>
         <div className='quantity'>
           <button onClick={decQ}>-</button>
