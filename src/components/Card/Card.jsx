@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { StyledCard } from './Card.styles';
 import CartDashBoard from '../CartDashBoard/CartDashBoard';
 
-const Card = ({ title, category, image, price, rating }) => {
+const Card = ({ id, title, category, image, price, rating, cart, setCart }) => {
   return (
     <>
       <StyledCard>
@@ -20,19 +20,22 @@ const Card = ({ title, category, image, price, rating }) => {
             </div>
           </div>
         </div>
-        <CartDashBoard />
+        <CartDashBoard id={id} cart={cart} setCart={setCart} />
       </StyledCard>
     </>
   );
 };
 
 Card.propTypes = {
+  id: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
   category: PropTypes.string,
   image: PropTypes.string,
   price: PropTypes.number,
   rating: PropTypes.object,
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
 };
 
 export default Card;
