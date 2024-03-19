@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { StyledCartDashBoard } from './CartDashBoard.styles';
+import PropTypes from 'prop-types';
 
-const CartDashBoard = () => {
+const CartDashBoard = ({ id, cart, setCart }) => {
   const [q, setQ] = useState(0);
   const [error, setError] = useState('');
 
@@ -11,6 +12,7 @@ const CartDashBoard = () => {
   const addToCart = () => {
     if (q <= 0) setError('Quantity invalid!');
     else {
+      setCart([...cart, { [id]: q }]);
       setError('');
       setQ(0);
     }
@@ -29,6 +31,12 @@ const CartDashBoard = () => {
       </div>
     </StyledCartDashBoard>
   );
+};
+
+CartDashBoard.propTypes = {
+  id: PropTypes.number,
+  cart: PropTypes.array,
+  setCart: PropTypes.func,
 };
 
 export default CartDashBoard;
