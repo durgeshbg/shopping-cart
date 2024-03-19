@@ -1,19 +1,23 @@
 import PropTypes from 'prop-types';
 import { StyledCard } from './Card.styles';
 
-const Card = ({ title, description, category, image, price, rating }) => {
+const Card = ({ title, category, image, price, rating }) => {
   return (
     <>
       <StyledCard>
-        <div className='title'>{title}</div>
-        <div className='description'>{description}</div>
-        <div className='category'>Categories: {category}</div>
-        <div className='price'>Price: {price}$</div>
-        <div className='rating'>
-          Rate: {rating.rate} - Count: {rating.count}
-        </div>
-        <div>
+        <div className='image'>
           <img src={image} alt={title} />
+        </div>
+        <div className='details'>
+          <div className='title'>{title}</div>
+          <div className='category'>{category}</div>
+          <div className='review'>
+            <div className='price'>{price}$</div>
+            <div className='rating'>
+              <span>&#9733; </span>
+              {rating.rate} - {rating.count}
+            </div>
+          </div>
         </div>
       </StyledCard>
     </>
