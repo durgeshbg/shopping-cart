@@ -6,4 +6,5 @@ export const StyledShop = styled.main`
   justify-content: space-around;
   align-items: center;
   padding: 1rem 0px;
+  gap: 15px;
 `;
