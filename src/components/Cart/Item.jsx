@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useFetch } from '../../useFetch';
+import { StyledItem } from './Item.styles';
 const Item = ({ item }) => {
   const { data, loading, error } = useFetch(
     `https://fakestoreapi.com/products/${item.id}`
@@ -8,7 +9,7 @@ const Item = ({ item }) => {
   if (loading) return <StyledItem>Loading...</StyledItem>;
   else
     return (
-      <div>
+      <StyledItem>
         <div className='image'>
           <img src={data.image} alt={data.title} />
         </div>
@@ -24,7 +25,7 @@ const Item = ({ item }) => {
         <div className='subtotal'>
           Subtotal {item.q} item{item.q > 1 ? 's' : ''}: {item.total} $
         </div>
-      </div>
+      </StyledItem>
     );
 };
 
