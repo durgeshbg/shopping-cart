@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import useFetch from './useFetch';
 import { useState } from 'react';
@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       <Navbar cartLen={cart.length} />
-      {pathname == '/shop' ? (
+      {pathname == '/' ? (
+        <Navigate to='/home' />
+      ) : pathname == '/shop' ? (
         <Outlet context={{ rawdata, cart, setCart }} />
       ) : pathname === '/cart' ? (
         <Outlet context={cart} />
