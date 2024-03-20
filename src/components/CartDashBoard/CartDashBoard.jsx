@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyledCartDashBoard } from './CartDashBoard.styles';
 import PropTypes from 'prop-types';
 
-const CartDashBoard = ({ id, cart, setCart }) => {
+const CartDashBoard = ({ id, cart, setCart, price }) => {
   const [q, setQ] = useState(0);
   const [error, setError] = useState('');
 
@@ -23,8 +23,9 @@ const CartDashBoard = ({ id, cart, setCart }) => {
       if (i !== -1) {
         const newCart = [...cart];
         newCart[i].q += q;
+        newCart[i].total = q * price;
         setCart(newCart);
-      } else setCart([...cart, { id: id, q: q }]);
+      } else setCart([...cart, { id: id, q: q, total: q * price }]);
       setError('');
       setQ(0);
     }
@@ -49,6 +50,7 @@ CartDashBoard.propTypes = {
   id: PropTypes.number,
   cart: PropTypes.array,
   setCart: PropTypes.func,
+  price: PropTypes.number,
 };
 
 export default CartDashBoard;
