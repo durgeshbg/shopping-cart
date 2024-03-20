@@ -8,11 +8,23 @@ const CartDashBoard = ({ id, cart, setCart }) => {
 
   const incQ = () => setQ(Number(q) + 1);
   const decQ = () => setQ(Number(q) - 1);
+  const inCart = (cart, id) => {
+    let index = -1;
+    cart.forEach((obj, i) => {
+      if (obj.id === id) index = i;
+    });
+    return index;
+  };
 
   const addToCart = () => {
     if (q <= 0) setError('Quantity invalid!');
     else {
-      setCart([...cart, { [id]: q }]);
+      const i = inCart(cart, id);
+      if (i !== -1) {
+        const newCart = [...cart];
+        newCart[i].q += q;
+        setCart(newCart);
+      } else setCart([...cart, { id: id, q: q }]);
       setError('');
       setQ(0);
     }
