@@ -25,4 +25,15 @@ export const StyledHome = styled.main`
     background-color: #d8d6d6;
     color: #525252;
   }
+
+  @media (max-width: 520px) {
+    p {
+      line-height: 20px;
+      font-size: 0.8rem;
+    }
+    a {
+      padding: 2px 5px;
+      font-size: 0.8rem;
+    }
+  }
 `;
