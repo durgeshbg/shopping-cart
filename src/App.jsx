@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar cartLen={cart.length} />
       {pathname == '/shop' ? (
         <Outlet context={{ rawdata, cart, setCart }} />
       ) : pathname === '/cart' ? (
