@@ -23,5 +23,5 @@ it('Card Mount', () => {
   expect(image.src).toMatch('image');
 
   const price = container.querySelector('.price');
-  expect(price.textContent).toMatch('0$');
+  expect(price.textContent).toMatch('0 $');
 });
