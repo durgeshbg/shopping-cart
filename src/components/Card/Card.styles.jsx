@@ -53,4 +53,49 @@ export const StyledCard = styled.div`
   span {
     color: gold;
   }
+  @media (max-width: 815px) {
+    width: 200px;
+    height: 280px;
+    padding: 0.8rem;
+
+    .image {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    img {
+      width: 70px;
+    }
+    .details {
+      gap: 8px;
+    }
+    .title {
+      font-size: 0.8rem;
+    }
+    .category,
+    .price,
+    .rating {
+      font-size: 0.7rem;
+    }
+  }
+  @media (max-width: 580px) {
+    width: 150px;
+    height: 240px;
+    padding: 0.5rem;
+
+    img {
+      width: 50px;
+    }
+    .details {
+      gap: 2px;
+    }
+    .title {
+      font-size: 0.6rem;
+    }
+    .category,
+    .price,
+    .rating {
+      font-size: 0.55rem;
+    }
+  }
 `;

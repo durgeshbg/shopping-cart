@@ -45,4 +45,25 @@ export const StyledCartDashBoard = styled.div`
     border-radius: 5px;
     padding: 5px;
   }
+
+  @media (max-width: 815px) {
+    input {
+      font-size: 0.7rem;
+      padding: 0px 4px;
+      width: 20px;
+    }
+    button {
+      font-size: 0.6rem;
+    }
+  }
+  @media (max-width: 580px) {
+    input {
+      font-size: 0.4rem;
+      padding: 0px 4px;
+      width: 20px;
+    }
+    button {
+      font-size: 0.5rem;
+    }
+  }
 `;

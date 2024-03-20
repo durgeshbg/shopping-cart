@@ -46,4 +46,60 @@ export const StyledItem = styled.div`
     color: #6666ff;
     min-width: 20ch;
   }
+
+  @media (max-width: 580px) {
+    padding: 10px;
+    height: 150px;
+    gap: 10px;
+
+    .details {
+      gap: 10px;
+    }
+
+    .title {
+      font-size: 0.8rem;
+    }
+    .price,
+    .rating,
+    .category {
+      font-size: 0.7rem;
+    }
+    .image {
+      width: 100px;
+    }
+    img {
+      width: 60px;
+    }
+    .subtotal {
+      min-width: 10ch;
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 430px) {
+    padding: 5px;
+    height: 140px;
+    gap: 5px;
+
+    .details {
+      gap: 5px;
+    }
+
+    .title {
+      font-size: 0.6rem;
+    }
+    .price,
+    .rating,
+    .category {
+      font-size: 0.5rem;
+    }
+    .image {
+      width: 80px;
+    }
+    img {
+      width: 50px;
+    }
+    .subtotal {
+      font-size: 8px;
+    }
+  }
 `;

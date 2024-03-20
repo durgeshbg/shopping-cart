@@ -41,4 +41,14 @@ export const StyledNavbar = styled.nav`
     padding: 0px 5px;
     border-radius: 50%;
   }
+
+  @media (max-width: 420px) {
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
 `;
