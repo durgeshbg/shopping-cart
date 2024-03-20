@@ -4,6 +4,9 @@ export const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   border-bottom: #6666ff double 1px;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
 
   h1 {
     font-size: 2rem;
@@ -28,5 +31,14 @@ export const StyledNavbar = styled.nav`
 
   .active {
     background-color: #6666ff;
+  }
+  span {
+    position: relative;
+    top: -9px;
+    right: -5px;
+    font-size: 12px;
+    background-color: red;
+    padding: 0px 5px;
+    border-radius: 50%;
   }
 `;

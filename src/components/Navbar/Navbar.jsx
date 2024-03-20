@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { StyledNavbar } from './Navbar.styles';
+import PropTypes from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({ cartLen }) => {
   return (
     <StyledNavbar>
       <h1>ShopIt</h1>
@@ -18,12 +19,16 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='cart'>
-            Cart
+            Cart<span>{cartLen}</span>
           </NavLink>
         </li>
       </ul>
     </StyledNavbar>
   );
+};
+
+Navbar.propTypes = {
+  cartLen: PropTypes.number,
 };
 
 export default Navbar;
