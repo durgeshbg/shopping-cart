@@ -13,14 +13,14 @@ const Card = ({ id, title, category, image, price, rating, cart, setCart }) => {
           <div className='title'>{title}</div>
           <div className='category'>{category}</div>
           <div className='review'>
-            <div className='price'>{price}$</div>
+            <div className='price'>{price} $</div>
             <div className='rating'>
               <span>&#9733; </span>
               {rating.rate} - {rating.count}
             </div>
           </div>
         </div>
-        <CartDashBoard id={id} cart={cart} setCart={setCart} />
+        <CartDashBoard id={id} cart={cart} setCart={setCart} price={price} />
       </StyledCard>
     </>
   );
